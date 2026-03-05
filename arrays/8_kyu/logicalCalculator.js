@@ -1,3 +1,9 @@
+// LOGICAL CALCULATOR
+
+// Link to original problem:
+// https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
+
+// Instructions:
 // Given an array of Boolean values and a logical operator, return a Boolean result based on sequentially applying the operator to the values in the array.
 
 // Examples
