@@ -1,5 +1,10 @@
-// Given an array of integers, find the one that appears an odd number of times.
+//FIND THE ODD INT
 
+// Link to the original problem:
+// https://www.codewars.com/kata/54da5a58ea159efa38000836/train/javascript
+
+// Instructions:
+// Given an array of integers, find the one that appears an odd number of times.
 // There will always be only one integer that appears an odd number of times.
 
 // Examples
