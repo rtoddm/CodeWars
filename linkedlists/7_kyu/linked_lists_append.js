@@ -23,7 +23,7 @@ function append(listA, listB) {
   if (listA === null) return listB;
   if (listB === null) return listA;
 
-  while (current.next != null) {
+  while (current.next !== null) {
     current = current.next;
   }
 
