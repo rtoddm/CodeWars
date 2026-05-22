@@ -30,3 +30,15 @@ function moveZeros(arr) {
 
   return [...others, ...zeros];
 }
+
+// Solution #3
+function moveZeros(arr) {
+  let others = [];
+  let zeros = [];
+
+  for (let elem of arr) {
+    elem === 0 ? zeros.push(elem) : others.push(elem);
+  }
+
+  return [...others, ...zeros];
+}
