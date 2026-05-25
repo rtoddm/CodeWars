@@ -39,7 +39,7 @@
 // The Rust version takes a slice of enum Direction {North, East, West, South}.
 // The OCaml version takes a list of type direction = | North | South | East | West.
 
-// Solution
+// Solution #1
 function dirReduc(arr) {
   let results = [];
 
@@ -60,4 +60,19 @@ function dirReduc(arr) {
     }
   }
   return results;
+}
+
+// Solution #2
+function dirReduc(arr) {
+  let direction = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    EAST: "WEST",
+    WEST: "EAST",
+  };
+
+  return arr.reduce((acc, elem) => {
+    acc[acc.length - 1] === direction[elem] ? acc.pop() : acc.push(elem);
+    return acc;
+  }, []);
 }
