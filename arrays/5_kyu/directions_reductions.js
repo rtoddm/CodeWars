@@ -76,3 +76,22 @@ function dirReduc(arr) {
     return acc;
   }, []);
 }
+
+// Solution #3
+function dirReduc(arr) {
+  let directions = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    EAST: "WEST",
+    WEST: "EAST",
+  };
+
+  let stack = [arr[0]];
+
+  for (let i = 1; i < arr.length; i++) {
+    arr[i] === directions[stack[stack.length - 1]]
+      ? stack.pop()
+      : stack.push(arr[i]);
+  }
+  return stack;
+}
