@@ -16,7 +16,9 @@
 // must return 0
 // cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000});
 
-// Solution
+// Solutions
+
+// Solution #1
 function cakes(recipe, available) {
   let cake = Infinity;
 
@@ -26,4 +28,18 @@ function cakes(recipe, available) {
     cake = Math.min(cake, available[key] / recipe[key]);
   }
   return Math.floor(cake);
+}
+
+// Solution #2
+function cakes(recipe, available) {
+  let totalPossible = Infinity;
+
+  for (let ingredient in recipe) {
+    if (!available[ingredient]) return 0;
+
+    let possible = Math.floor(available[ingredient] / recipe[ingredient]);
+
+    totalPossible = Math.min(totalPossible, possible);
+  }
+  return totalPossible;
 }
