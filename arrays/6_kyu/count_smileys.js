@@ -59,3 +59,28 @@ function countSmileys(arr) {
     return hasValidEyes && hasValidMouth && hasValidNose;
   }).length;
 }
+
+// Third Solution
+function countSmileys(arr) {
+  const eyes = [":", ";"];
+  const noses = ["-", "~"];
+  const mouths = [")", "D"];
+
+  let count = 0;
+
+  for (let elem of arr) {
+    if (elem.length === 3 && noses.includes(elem[1])) {
+      if (eyes.includes(elem[0]) && mouths.includes(elem[2])) {
+        count++;
+      }
+    }
+
+    if (
+      elem.length === 2 &&
+      eyes.includes(elem[0]) &&
+      mouths.includes(elem[1])
+    ) {
+      count++;
+    }
+  }
+}
