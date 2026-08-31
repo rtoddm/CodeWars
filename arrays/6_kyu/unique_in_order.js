@@ -12,7 +12,9 @@
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
-// Solution
+// Solutions
+
+// Solution #1
 var uniqueInOrder = function (iterable) {
   if (iterable.length === 0) return [];
 
@@ -23,4 +25,20 @@ var uniqueInOrder = function (iterable) {
     newArray.push(iterable[i]);
   }
   return newArray;
+};
+
+// Solution #2
+var uniqueInOrder = function (iterable) {
+  if (iterable.length === 0) return [];
+
+  let unique = [iterable[0]];
+
+  for (let elem of iterable) {
+    if (elem === unique[unique.length - 1]) {
+      continue;
+    } else {
+      unique.push(elem);
+    }
+  }
+  return unique;
 };
