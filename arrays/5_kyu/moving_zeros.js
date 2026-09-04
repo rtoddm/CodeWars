@@ -42,3 +42,14 @@ function moveZeros(arr) {
 
   return [...others, ...zeros];
 }
+
+// Solution #4
+function moveZeros(arr) {
+  let newArray = arr.filter((elem) => elem !== 0);
+
+  for (let elem of arr) {
+    if (elem === 0) newArray.push(elem);
+  }
+
+  return newArray;
+}
