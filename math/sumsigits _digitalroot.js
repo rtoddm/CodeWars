@@ -9,7 +9,9 @@
 
 // Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
 
-// Solution
+// Solutions
+
+//Solution #1
 function digitalRoot(n) {
   let sum = 0;
   let array = n.toString().split("");
@@ -27,4 +29,16 @@ function digitalRoot(n) {
   } else {
     return sum;
   }
+}
+
+// Solution #2
+function digitalRoot(n) {
+  let string = n.toString().split("");
+  let sum = 0;
+
+  for (let elem of string) {
+    sum += Number(elem);
+  }
+
+  return sum > 9 ? digitalRoot(sum) : sum;
 }
