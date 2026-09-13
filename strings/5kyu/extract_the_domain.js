@@ -10,7 +10,9 @@
 // * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
 // * url = "https://www.cnet.com"                -> domain name = cnet"
 
-// Solution
+// Solutions
+
+// Solution #1
 
 function domainName(url) {
   let newUrl;
@@ -28,4 +30,14 @@ function domainName(url) {
   } else {
     newUrl = url.split(".");
   }
+}
+
+// Solution #2
+
+function domainName(url) {
+  url = url.replace("http://", "");
+  url = url.replace("https://", "");
+  url = url.replace("www.", "");
+
+  return url.split(".")[0];
 }
