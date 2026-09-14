@@ -11,8 +11,9 @@
 // "identifier"   =>  "identifier"
 // ""             =>  ""
 
-// Solution
+// Solutions
 
+// Solution #1
 function solution(string) {
   if (string.length === 0) {
     return "";
@@ -28,4 +29,21 @@ function solution(string) {
     }
   }
   return result;
+}
+
+// Solution #2
+function solution(string) {
+  let newString = "";
+  const split = string.split("");
+
+  for (let i = 0; i < split.length; i++) {
+    newString += split[i];
+
+    if (split[i + 1] !== undefined) {
+      if (split[i + 1] === split[i + 1].toUpperCase()) {
+        newString += " ";
+      }
+    }
+  }
+  return newString;
 }
