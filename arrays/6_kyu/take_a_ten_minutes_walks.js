@@ -8,7 +8,9 @@
 
 // Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
-// Solution
+// Solutions
+
+// Solution #1
 function isValidWalk(walk) {
   let x = 0;
   let y = 0;
@@ -26,4 +28,17 @@ function isValidWalk(walk) {
   }
 
   return x === 0 && y === 0 && walk.length === 10;
+}
+
+// Solution #2
+function isValidWalk(walk) {
+  if (walk.length !== 10) return false;
+
+  const counts = {};
+
+  for (let elem of walk) {
+    counts[elem] = (counts[elem] || 0) + 1;
+  }
+
+  return counts["n"] === counts["s"] || counts["e"] === counts["w"];
 }
