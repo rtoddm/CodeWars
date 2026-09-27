@@ -12,7 +12,9 @@
 // "This is a test        --> "This is a test"
 // "This is another test" --> "This is rehtona test"
 
-// Solution
+// Solutions
+
+// Solution #1
 function spinWords(string) {
   const array = string.split(" ");
   const jumbled = [];
@@ -27,4 +29,23 @@ function spinWords(string) {
   }
 
   return jumbled.join(" ");
+}
+
+// Solution #2
+function spinWords(string) {
+  const array = string.split(" ");
+
+  return array
+    .map((elem) => {
+      let newString = "";
+      if (elem.length >= 5) {
+        for (let i = elem.length - 1; i >= 0; i--) {
+          newString += elem[i];
+        }
+      } else {
+        newString += elem;
+      }
+      return newString;
+    })
+    .join(" ");
 }
