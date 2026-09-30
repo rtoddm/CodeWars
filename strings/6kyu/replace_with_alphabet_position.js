@@ -14,7 +14,9 @@
 // Input = "The sunset sets at twelve o' clock."
 // Output = "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
 
-// Solution
+// Solutions
+
+// Solution #1
 function alphabetPosition(text) {
   const letters = "abcdefghijklmnopqrstuvwxyz";
   let newString = "";
@@ -25,4 +27,21 @@ function alphabetPosition(text) {
     }
   }
   return newString.trim();
+}
+
+// Solution #2
+function alphabetPosition(text) {
+  const chars = text
+    .split("")
+    .map((elem) => elem.toLowerCase())
+    .filter((elem) => elem !== " " && elem >= "a" && elem <= "z")
+    .join("");
+
+  let positions = [];
+
+  for (let i = 0; i < chars.length; i++) {
+    positions.push(chars.charCodeAt(i) - 96);
+  }
+
+  return positions.join(" ");
 }
