@@ -38,6 +38,7 @@ Each solution includes:
 
 - Problem name
 - Link to the original Codewars challenge
+- Instructions for that particular problem
 - My JavaScript solution
 
 ---
